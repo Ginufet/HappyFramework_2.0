@@ -5,7 +5,6 @@ import entity.Entity;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Vector;
 
 public class Scene implements Printable, Actionable{
 

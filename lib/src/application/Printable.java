@@ -1,6 +1,7 @@
 package application;
 
 public interface Printable {
+
     default String getMethodName() {
         StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
         StackTraceElement e = stacktrace[3];
@@ -12,4 +13,5 @@ public interface Printable {
         String methodName = "[" + this.getMethodName() + "]";
         System.out.printf("%-45s %-15s : %s\n", className, methodName, description);
     }
+
 }

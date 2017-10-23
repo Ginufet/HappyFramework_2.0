@@ -7,6 +7,8 @@ public  class Application implements Printable{
 
     public void start(){
         print("Story starts!");
+        // Write your code here.
+
     }
 
     public void end(){

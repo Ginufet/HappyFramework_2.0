@@ -3,8 +3,8 @@ import application.Application;
 public class Main {
     public static void main(String[] args) {
         Application application = new Application();
-        application.print("Hello World");
-
+        application.start();
+        application.end();
     }
 
 }

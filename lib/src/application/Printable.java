@@ -8,8 +8,8 @@ public interface Printable {
     }
 
     default void print(String description){
-        String className = this.getClass().toString();
-        String methodName = this.getMethodName();
-        System.out.println("<" + className +"> [method " + methodName +"]"+ " : " + description);
+        String className = "<" + this.getClass().toString() + ">";
+        String methodName = "[" + this.getMethodName() + "]";
+        System.out.printf("%-45s %-15s : %s\n", className, methodName, description);
     }
 }

@@ -14,6 +14,7 @@ public abstract class Scene implements Printable, Actionable {
     private static long id = 0;
 
     public Scene(){
+
         sceneName = "Default";
     }
 

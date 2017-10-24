@@ -1,8 +1,8 @@
-import application.Application;
+import application.SampleApplication;
 
 public class Main {
     public static void main(String[] args) {
-        Application application = new Application();
+        SampleApplication application = new SampleApplication();
         application.start();
         application.end();
     }

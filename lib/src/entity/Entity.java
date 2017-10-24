@@ -2,6 +2,12 @@ package entity;
 
 import application.Printable;
 
-public class Entity implements Printable {
+public abstract class Entity implements Printable {
+    protected Entity() {
+        super();
+    }
 
+    protected Entity(String name) {
+
+    }
 }

@@ -1,6 +1,5 @@
 package entity.building;
 
-import entity.building.material.door.Door;
 
 /**
  * 建筑的抽象基类

@@ -6,6 +6,7 @@ import entity.Product;
 import entity.group.Group;
 
 public abstract class Animal extends Entity implements AnimalBehavior {
+    protected AnimalType animalType;
 
     private boolean sex = true;
     private boolean pregnant = false;
@@ -35,4 +36,10 @@ public abstract class Animal extends Entity implements AnimalBehavior {
     public void makePregnant() {
         pregnant = true;
     }
+
+    public AnimalType getAnimalType() {
+        return animalType;
+    }
+
+    abstract public Animal purchaseAgain();
 }

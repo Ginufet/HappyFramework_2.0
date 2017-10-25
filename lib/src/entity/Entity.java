@@ -1,6 +1,7 @@
 package entity;
 
 import application.Printable;
+import entity.memento.Memento;
 import entity.entityState.ActiveState;
 import entity.entityState.State;
 
@@ -27,13 +28,13 @@ public abstract class Entity implements Printable, Cloneable {
         return this.state;
     }
 
-//    public Memento saveStateToMemento() {
-//        return new Memento(state);
-//    }
-//
-//    public void getStateFromMemento(Memento Memento) {
-//        state = Memento.getState();
-//    }
+    public Memento saveStateToMemento() {
+        return new Memento(state);
+    }
+
+    public void getStateFromMemento(Memento Memento) {
+        state = Memento.getState();
+    }
 
     @Override
     public Object clone() {

@@ -11,7 +11,6 @@ public abstract class Scene implements Printable, Actionable {
     private String sceneName;
     private HashMap<String, Entity> children;
     private static long id = 0;
-    private Event event;
 
     protected Scene() {
         sceneName = "Default";
@@ -39,6 +38,7 @@ public abstract class Scene implements Printable, Actionable {
     public Collection<Entity> getAllChildren() {
         return children.values();
     }
+
     public void clearChildren() {
         children.clear();
     }

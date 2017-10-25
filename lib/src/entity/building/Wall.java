@@ -1,4 +1,4 @@
-package entity.BuildingMaterialFactory.Wall;
+package entity.building;
 
 /**
  * 楼层的抽象基类

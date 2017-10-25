@@ -1,9 +1,6 @@
-package entity.HouseBuilder;
+package entity.building;
 
-import entity.BuildingMaterialFactory.Door.Door;
-import entity.BuildingMaterialFactory.Foundation.Foundation;
-import entity.BuildingMaterialFactory.Roof.Roof;
-import entity.BuildingMaterialFactory.Wall.Wall;
+import entity.building.material.door.Door;
 
 /**
  * 建筑的抽象基类

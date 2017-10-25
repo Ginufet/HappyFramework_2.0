@@ -1,4 +1,4 @@
-package entity.BuildingMaterialFactory.Door;
+package entity.building;
 
 /**
  * 门的抽象基类

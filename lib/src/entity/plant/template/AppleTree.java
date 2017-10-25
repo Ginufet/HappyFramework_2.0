@@ -1,5 +1,6 @@
 package entity.plant.template;
 
+import entity.Product;
 import entity.group.Group;
 import entity.plant.Plant;
 import entity.plant.PlantProduct;
@@ -17,7 +18,7 @@ public class AppleTree extends Plant {
 
 
     @Override
-    public Group<PlantProduct> yield(int count) {
+    public Group<Product> yield(int count) {
         print("I have many apples now!");
         return new Group<>(new Apple(), count);
 

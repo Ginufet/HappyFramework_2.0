@@ -20,12 +20,12 @@ public class SampleScene extends Scene {
 
 
 
-        AppleTree appleTree = new AppleTree();
-        Allocator<AppleTree> appleTreeAllocator = new Allocator<>();
-        appleTreeAllocator.setObtainArguments(Strategy.PURCHASE, null);
-        AppleTree tree1 = appleTreeAllocator.obtain();
-        appleTreeAllocator.setObtainArguments(Strategy.REPRODUCE, appleTree);
-        AppleTree tree2 = appleTreeAllocator.obtain();
+//        AppleTree appleTree = new AppleTree();
+//        Allocator<AppleTree> appleTreeAllocator = new Allocator<>();
+//        appleTreeAllocator.setObtainArguments(Strategy.PURCHASE);
+//        AppleTree tree1 = appleTreeAllocator.obtain();
+//        appleTreeAllocator.setObtainArguments(Strategy.REPRODUCE, appleTree);
+//        AppleTree tree2 = appleTreeAllocator.obtain();
 
 
     }

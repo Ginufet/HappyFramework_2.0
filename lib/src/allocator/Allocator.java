@@ -3,31 +3,35 @@ package allocator;
 import application.Printable;
 import entity.Entity;
 
-
 interface Obtainable {
     Entity obtain();
 }
 
-public class Allocator<T extends Entity> implements Obtainable {
+public class Allocator<T extends Entity> implements Obtainable, Printable {
 
-    private Strategy strategy = Strategy.PURCHASE;
+    private Obtainable proxy = new PurchaseProxy<T>();
     private T mother = null;
 
+    @SuppressWarnings(value = {"unchecked"})
     public T obtain() {
-        T result = null;
-        if (strategy == Strategy.PURCHASE) {
-            PurchaseProxy<T> purchaseProxy = new PurchaseProxy<>();
-            result = purchaseProxy.obtain();
-        } else if (strategy == Strategy.REPRODUCE) {
-            ReproduceProxy<T> reproduceProxy = new ReproduceProxy<>(mother);
-            result = reproduceProxy.obtain();
-        }
-        return result;
+        return (T)proxy.obtain();
     }
 
-    public void setObtainArguments(Strategy strategy, T mother) {
-        this.strategy = strategy;
+    public void setMother(T mother) {
         this.mother = mother;
+    }
+
+    public void setObtainArguments(Strategy strategy) {
+        switch (strategy) {
+            case PURCHASE:
+                this.proxy = new PurchaseProxy<T>();
+                break;
+            case REPRODUCE:
+                this.proxy = new ReproduceProxy<>(mother);
+                break;
+            default:
+                print("No such strategy.");
+        }
     }
 }
 
@@ -44,7 +48,7 @@ class PurchaseProxy<T extends Entity> implements Obtainable, Printable {
 
 class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
 
-    private T mother;
+    private T mother = null;
 
     ReproduceProxy(T mother) {
         this.mother = mother;
@@ -53,6 +57,10 @@ class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
 
     @SuppressWarnings(value = {"unchecked"})
     public T obtain() {
+        if (this.mother == null) {
+            print("No available mother. Nothing was born.");
+            return null;
+        }
         print("A child was born!");
         return (T) mother.clone();
     }

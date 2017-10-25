@@ -14,9 +14,9 @@ public class Transform<T, S> implements Transformable<S>, Printable {
 
     @Override
     public String getCurrentEntity() {
-        String typeName = getTrunctedName(rootEntity.getClass().getSimpleName());
+        String typeName = getTruncatedName(rootEntity.getClass().getSimpleName());
         if (this.currentEntity != null){
-             typeName = getTrunctedName(currentEntity.getClass().toString());
+             typeName = getTruncatedName(currentEntity.getClass().toString());
              print("I'm " + typeName + " now!");
              return currentEntity.getClass().toString();
         }
@@ -32,12 +32,12 @@ public class Transform<T, S> implements Transformable<S>, Printable {
 
     @Override
     public String getPreviousEntity() {
-        String typeName = getTrunctedName(rootEntity.getClass().getSimpleName());
+        String typeName = getTruncatedName(rootEntity.getClass().getSimpleName());
         print("I was " + typeName + " before.");
         return rootEntity.getClass().getSimpleName();
     }
 
-    private static String getTrunctedName(String fullClassName) {
+    private static String getTruncatedName(String fullClassName) {
         String[] splited = fullClassName.split("\\.");
         return splited[splited.length - 1];
     }

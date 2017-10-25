@@ -13,23 +13,18 @@ public class SampleScene extends Scene {
 
     @Override
     public void action() {
+        // Write your code here.
         // TODO: Create entity using factory method or abstract factory method
-        Dog doggy = new Dog(true);
-        doggy.move();
-        doggy.speak();
-
-        Allocator<Dog> dogAllocator = new Allocator<>();
-        dogAllocator.setObtainArguments(Strategy.REPRODUCE, doggy);
-        Dog newDog = dogAllocator.obtain();
-
-
-//        AppleTree appleTree = new AppleTree();
-//        Allocator<AppleTree> appleTreeAllocator = new Allocator<>();
-//        appleTreeAllocator.setObtainArguments(Strategy.PURCHASE);
-//        AppleTree tree1 = appleTreeAllocator.obtain();
-//        appleTreeAllocator.setObtainArguments(Strategy.REPRODUCE, appleTree);
-//        AppleTree tree2 = appleTreeAllocator.obtain();
-
+        Dog dog = new Dog();
+        System.out.println((dog.getClass()));
+//        Allocator<Dog> dogAllocator = new Allocator<>();
+//        dogAllocator.setObtainArguments(Strategy.PURCHASE);
+//        Dog doggy = dogAllocator.obtain();
+//        dogAllocator.setMother(doggy);
+//        dogAllocator.setObtainArguments(Strategy.REPRODUCE);
+//        Dog doggyChild = dogAllocator.obtain();
+//
+//        System.out.println(doggyChild.getClass());
 
     }
 }

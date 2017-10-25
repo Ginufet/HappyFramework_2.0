@@ -19,7 +19,7 @@ public class Allocator<T extends Entity> implements Obtainable, Printable {
         return (T)proxy.obtain();
     }
 
-    public void setObtainArguments(Strategy strategy, T mother) {
+    public void setMother(T mother) {
         this.mother = mother;
     }
 
@@ -53,6 +53,11 @@ class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
     private T mother = null;
 
     ReproduceProxy(T mother) {
+        if (mother == null) {
+            this.mother = null;
+            return;
+        }
+
         if (Animal.class.isAssignableFrom(mother.getClass())) {
             // if mother's class extends Animal
             if (((Animal) mother).isFemale()) {

@@ -4,7 +4,7 @@ import entity.Product;
 import entity.animal.Animal;
 import entity.group.Group;
 
-public class Cow extends Animal {
+public abstract class Cow extends Animal {
     @Override
     public void move() {
         print("A walking cow seems relaxed");

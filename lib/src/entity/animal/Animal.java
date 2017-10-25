@@ -2,8 +2,6 @@ package entity.animal;
 
 import behavior.animal.AnimalBehavior;
 import entity.Entity;
-import entity.Product;
-import entity.group.Group;
 
 public abstract class Animal extends Entity implements AnimalBehavior {
 //    protected AnimalType animalType;
@@ -11,17 +9,17 @@ public abstract class Animal extends Entity implements AnimalBehavior {
     protected boolean sex;
     protected boolean pregnant;
     protected String name;
-    protected double life;
+    protected double age;
 
-    protected Animal(String name, boolean sex, double life, boolean pregnant) {
+    protected Animal(String name, boolean sex, double age, boolean pregnant) {
         this.name = name;
-        this.life = life;
+        this.age = age;
         this.sex = sex;
         this.pregnant = pregnant;
     }
 
-    protected Animal(String name, boolean sex, double life) {
-        this(name, sex, life, false);
+    protected Animal(String name, boolean sex, double age) {
+        this(name, sex, age, false);
     }
 
     protected Animal(String name, boolean sex) {

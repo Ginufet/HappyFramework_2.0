@@ -5,8 +5,12 @@ import allocator.Strategy;
 import application.Timer;
 import behavior.Transform;
 import entity.animal.template.Dog;
+import entity.human.templete.Staff;
+import entity.human.templete.Supervisor;
 import entity.plant.template.AppleTree;
 import scene.Scene;
+
+import java.util.Iterator;
 
 public class SampleScene extends Scene {
     public SampleScene() {
@@ -14,7 +18,13 @@ public class SampleScene extends Scene {
     }
 
     @Override
+    public void init() {
+        print("Initializing scene...");
+    }
+
+    @Override
     public void action() {
+        print("Scene acts...");
         // Write your code here.
 
 //        // Timer test
@@ -42,6 +52,10 @@ public class SampleScene extends Scene {
 //        dogDogTransform.transform();
 //        System.out.println(dogDogTransform.getTarget());
 
+
+//        Staff staff = new Supervisor("a", true);
+//        Iterator iterator =  staff.iterator();
+//        iterator.hasNext()
 
     }
 }

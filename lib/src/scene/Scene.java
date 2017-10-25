@@ -17,7 +17,7 @@ public abstract class Scene implements Printable, Actionable {
         this.mediator = mediator;
     }
     //在抽象同事类中添加用于与中介者取得联系（即注册）的方法
-    public  void setMediator(Director mediator){
+    public void setMediator(Director mediator){
         this.mediator = mediator;
     }
 
@@ -31,11 +31,6 @@ public abstract class Scene implements Printable, Actionable {
 
     protected Scene(String name) {
         sceneName = name;
-    }
-
-    @Override
-    public void action() {
-
     }
 
     public String addChild(Entity entity) {

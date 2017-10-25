@@ -2,6 +2,8 @@ package allocator;
 
 import application.Printable;
 import entity.Entity;
+import entity.animal.Animal;
+import entity.plant.Plant;
 
 interface Obtainable {
     Entity obtain();
@@ -51,9 +53,22 @@ class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
     private T mother = null;
 
     ReproduceProxy(T mother) {
-        this.mother = mother;
-    }
+        if (Animal.class.isAssignableFrom(mother.getClass())) {
+            // if mother's class extends Animal
+            if (((Animal) mother).isFemale()) {
+                this.mother = mother;
+            } else {
+                print("Male animals cannot reproduce children!");
+            }
+        } else if (Plant.class.isAssignableFrom(mother.getClass())) {
+            // if mother's class extends Plant
+            this.mother = mother;
+        } else {
+            // if mother's class extends another class
+            print("Only animals and plants can reproduce children!");
+        }
 
+    }
 
     @SuppressWarnings(value = {"unchecked"})
     public T obtain() {

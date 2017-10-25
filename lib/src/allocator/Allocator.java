@@ -19,7 +19,7 @@ public class Allocator<T extends Entity> implements Obtainable, Printable {
         return (T)proxy.obtain();
     }
 
-    public void setMother(T mother) {
+    public void setObtainArguments(Strategy strategy, T mother) {
         this.mother = mother;
     }
 
@@ -67,7 +67,6 @@ class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
             // if mother's class extends another class
             print("Only animals and plants can reproduce children!");
         }
-
     }
 
     @SuppressWarnings(value = {"unchecked"})

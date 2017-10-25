@@ -1,6 +1,7 @@
 import allocator.Allocator;
 import allocator.Strategy;
 import application.SampleApplication;
+
 import behavior.Performable;
 import behavior.templates.Coder;
 import behavior.templates.Dancer;

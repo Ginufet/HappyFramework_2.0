@@ -1,9 +1,7 @@
-package scene.template;
+package scene;
 
 import application.Printable;
 import entity.Entity;
-import scene.Actionable;
-import scene.Event;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -15,19 +13,17 @@ public abstract class Scene implements Printable, Actionable {
     private static long id = 0;
     private Event event;
 
-    public Scene(Event event){
-        this.event = event;
+    protected Scene() {
         sceneName = "Default";
     }
 
-    public Scene(String name){
+    protected Scene(String name) {
         sceneName = name;
     }
 
-
-
+    @Override
     public void action() {
-        event.happen();
+
     }
 
     public String addChild(Entity entity) {

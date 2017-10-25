@@ -2,12 +2,33 @@ package entity;
 
 import application.Printable;
 
-public abstract class Entity implements Printable {
+public abstract class Entity implements Printable, Cloneable {
+    private static long number = 0;
+    private long id;
+
     protected Entity() {
-        super();
+        id = number++;
     }
 
-    protected Entity(String name) {
-
+    public long getId() {
+        return this.id;
     }
+
+    @Override
+    public Object clone() {
+
+        Object result = null;
+
+        try {
+            print("Cloning");
+            result = super.clone();
+        } catch (CloneNotSupportedException e) {
+            print("Oops, clone not supported");
+        }
+
+        return result;
+    }
+
+
+
 }

@@ -10,34 +10,37 @@ import java.util.ArrayList;
 
 public final class CommonAnimal implements Printable {
 
-	private static volatile CommonAnimal commonAnimalsInstance;
-	private ArrayList<Animal> commonAnimalList = new ArrayList<>();
+    private static volatile CommonAnimal commonAnimalsInstance;
+    private ArrayList<Animal> commonAnimalList = new ArrayList<>();
 
-	private CommonAnimal() {}
+    private CommonAnimal() {
+    }
 
-	public static CommonAnimal getCommonAnimalsInstance() {
-		if (commonAnimalsInstance == null) {
-			synchronized (CommonAnimal.class) {
-				if (commonAnimalsInstance == null) {
-					commonAnimalsInstance = new CommonAnimal();
-				}
-			}
-		}
-		return commonAnimalsInstance;
-	}
+    public static CommonAnimal getCommonAnimalsInstance() {
+        if (commonAnimalsInstance == null) {
+            synchronized (CommonAnimal.class) {
+                if (commonAnimalsInstance == null) {
+                    commonAnimalsInstance = new CommonAnimal();
+                }
+            }
+        }
+        return commonAnimalsInstance;
+    }
 
-	public void addCommonAnimalTypeFrom(Animal animal) {
-		commonAnimalList.add(animal);
-	}
+    public void addCommonAnimalTypeFrom(Animal animal) {
+        commonAnimalList.add(animal);
+    }
 
-	public Animal purchaseAgain(AnimalType animalType) {
-		for (Animal animal : commonAnimalList) {
-			if (animal.getAnimalType().equals(animalType)) {
-				print("Buying a " + animal.getAnimalType().name() + " again from your common list.");
-				return animal.purchaseAgain();
-			}
-		}
-		print("No such animal type in the list of commonly purchased animals.");
-		return null;
-	}
+    public Animal purchaseAgain(AnimalType animalType) {
+        for (Animal animal : commonAnimalList) {
+//			if (animal.getAnimalType().equals(animalType)) {
+//				print("Buying a " + animal.getAnimalType().name() + " again from your common list.");
+//				return animal.purchaseAgain();
+//			}
+        }
+        print("No such animal type in the list of commonly purchased animals.");
+        return null;
+    }
 }
+
+

@@ -4,6 +4,7 @@ import application.Printable;
 import entity.Entity;
 import entity.animal.Animal;
 import entity.plant.Plant;
+import org.omg.Dynamic.Parameter;
 
 interface Obtainable {
     Entity obtain();
@@ -42,8 +43,7 @@ class PurchaseProxy<T extends Entity> implements Obtainable, Printable {
     }
 
     public T obtain() {
-        print("Buying Something");
-        //TODO To add Factory Method and Abstract Method etc.
+        print("Buying something...");
         return null;
     }
 }
@@ -60,7 +60,7 @@ class ReproduceProxy<T extends Entity> implements Obtainable, Printable {
 
         if (Animal.class.isAssignableFrom(mother.getClass())) {
             // if mother's class extends Animal
-            if (((Animal) mother).isFemale()) {
+            if (!((Animal) mother).isMale()) {
                 this.mother = mother;
             } else {
                 print("Male animals cannot reproduce children!");

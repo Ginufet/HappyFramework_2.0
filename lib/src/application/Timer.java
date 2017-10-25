@@ -2,11 +2,11 @@ package application;
 
 public class Timer implements Printable{
     private static Timer timer;
-    private static long currentTime;
+    private static long startTime;
 
     static {
         timer = new Timer();
-        currentTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
     }
 
     public static Timer getInstance() {
@@ -16,9 +16,17 @@ public class Timer implements Printable{
     private Timer() {
     }
 
+    public void setStartTime() {
+        startTime = System.currentTimeMillis();
+    }
+
+    public long getDeltaTime() {
+        return System.currentTimeMillis() - startTime;
+    }
+
     public long getCurrentTime() {
-        print("Is getting current time.");
-        return getCurrentTime();
+        print("Implemented with System.currentTimeMillis().");
+        return System.currentTimeMillis();
     }
 
 

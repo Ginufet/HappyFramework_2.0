@@ -7,11 +7,6 @@ public class SampleScene extends Scene {
         super();
     }
 
-    public SampleScene(String string) {
-        super(string);
-    }
-
-
 
     @Override
     public void action() {

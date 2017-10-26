@@ -4,7 +4,6 @@ import application.Printable;
 import entity.Entity;
 import entity.animal.Animal;
 import entity.plant.Plant;
-import org.omg.Dynamic.Parameter;
 
 interface Obtainable {
     Entity obtain();
@@ -24,8 +23,8 @@ public class Allocator<T extends Entity> implements Obtainable, Printable {
         this.mother = mother;
     }
 
-    public void setObtainArguments(Strategy strategy) {
-        switch (strategy) {
+    public void setObtainArguments(ObtainStrategy obtainStrategy) {
+        switch (obtainStrategy) {
             case PURCHASE:
                 this.proxy = new PurchaseProxy<T>();
                 break;
@@ -33,7 +32,7 @@ public class Allocator<T extends Entity> implements Obtainable, Printable {
                 this.proxy = new ReproduceProxy<>(mother);
                 break;
             default:
-                print("No such strategy.");
+                print("No such obtainStrategy.");
         }
     }
 }

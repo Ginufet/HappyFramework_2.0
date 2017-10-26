@@ -1,9 +1,9 @@
 package scene;
 
+import application.Application;
+import application.Director;
 import application.Printable;
 import entity.Entity;
-import scene.Actionable;
-import scene.Director;
 
 import java.util.Collection;
 import java.util.HashMap;

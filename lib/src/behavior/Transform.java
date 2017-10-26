@@ -1,7 +1,7 @@
 package behavior;
 
 import allocator.Allocator;
-import allocator.Strategy;
+import allocator.ObtainStrategy;
 import application.Printable;
 import entity.Entity;
 
@@ -31,7 +31,7 @@ public class Transform<Target extends Entity, Source> implements Transformable<T
                 + " into " + source.getClass().getSimpleName() + "...");
         // For completeness of this framework
         Allocator<Target> allocator = new Allocator<>();
-        allocator.setObtainArguments(Strategy.PURCHASE);
+        allocator.setObtainArguments(ObtainStrategy.PURCHASE);
         this.target = allocator.obtain();
     }
 

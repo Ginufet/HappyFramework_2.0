@@ -1,5 +1,5 @@
 package allocator;
 
-public enum Strategy {
+public enum ObtainStrategy {
     PURCHASE, REPRODUCE
 }

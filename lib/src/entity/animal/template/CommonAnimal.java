@@ -1,8 +1,6 @@
 package entity.animal.template;
 
 import application.Printable;
-import allocator.Allocator;
-import allocator.Strategy;
 import entity.animal.Animal;
 import entity.animal.AnimalType;
 
